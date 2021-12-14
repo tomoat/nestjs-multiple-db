@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 
-@Entity()
+@Entity({ name: 'Photo', schema: 'public' })
 export class Photo  extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -8,15 +8,15 @@ export class Photo  extends BaseEntity {
   @Column({ length: 500 })
   name: string;
 
-  // @Column('text')
-  // description: string;
+  @Column('text')
+  description: string;
 
-  // @Column()
-  // filename: string;
+  @Column()
+  filename: string;
 
-  // @Column('int')
-  // views: number;
+  @Column('int')
+  views: number;
 
-  // @Column()
-  // isPublished: boolean;
+  @Column()
+  isPublished: boolean;
 }
