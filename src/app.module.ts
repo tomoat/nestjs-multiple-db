@@ -12,6 +12,7 @@ import { PhotoRepository } from './modules/photo/photo.repository';
 import { User } from './modules/user/user.entity';
 import { UserRepository } from './modules/user/user.repository';
 import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionOptions';
+import { PeopleModule } from './modules/people/people.module';
 
 const defaultOptions = {
   type: 'sqlite',
@@ -61,6 +62,7 @@ const defaultOptions = {
     TypeOrmModule.forFeature([Photo, PhotoRepository], 'PhotoConnection'),
     PhotoModule,
     UserModule,
+    PeopleModule,
   ],
   controllers: [AppController],
   providers: [AppService],
