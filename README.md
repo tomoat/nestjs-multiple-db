@@ -34,6 +34,27 @@
 $ npm install
 ```
 
+## Start mysql using docker
+
+```bash
+docker-compose up
+```
+### Some important docker commands
+```bash
+docker-compose down # Removes the container
+docker-compose down -v # Remove the created volumes as well
+docker-compose up -d # -d will run the compose file in background
+docker-compose build # This will just build an image
+docker volume rm VOLUME_NAME # Reinitializing the Docker container requires deleting the volume
+docker volume ls # list all volume
+```
+### Some important mysql commands
+```bash
+mysql> CREATE USER 'root'@'%' IDENTIFIED BY 'PASSWORD';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+mysql> FLUSH PRIVILEGES;
+```
+
 ## Running the app
 
 ```bash
@@ -72,4 +93,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-  Nest is [MIT licensed](LICENSE).
+Nest is [MIT licensed](LICENSE).
