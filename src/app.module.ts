@@ -6,8 +6,8 @@ import { PhotoModule } from './modules/photo/photo.module';
 import { UserModule } from './modules/user/user.module';
 import { Photo } from './modules/photo/photo.entity';
 // import { SqlServerConnectionOptions } from 'typeorm/driver/sqlserver/SqlServerConnectionOptions';
-import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'
-import {  PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
+import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions';
+// import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 import { PhotoRepository } from './modules/photo/photo.repository';
 import { User } from './modules/user/user.entity';
 import { UserRepository } from './modules/user/user.repository';
@@ -25,9 +25,8 @@ const defaultOptions = {
   // username: 'admin',
   // password: '12345678',
   // database: 'power_search_db',
-  // entitiers: [],
+  // entities: [],
   synchronize: true,
-  
 };
 @Module({
   imports: [
@@ -74,7 +73,7 @@ const defaultOptions = {
       database: 'power_search_db',
       username: 'admin',
       password: 'admin',
-      entitiers: [],
+      entities: [],
     } as MysqlConnectionOptions),
     TypeOrmModule.forRoot({
       ...defaultOptions,
@@ -82,7 +81,7 @@ const defaultOptions = {
       database: 'power_metadata',
       username: 'user',
       password: 'password',
-      entitiers: [powerSearch],
+      entities: [powerSearch],
     } as MysqlConnectionOptions),
     TypeOrmModule.forFeature([powerSearch, powerSearchRepository], 'mysql2'),
     PowerSearchModule,
