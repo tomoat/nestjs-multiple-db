@@ -5,7 +5,7 @@ services:
     image: mysql:latest
     container_name: mysql-power-search
     volumes:
-      - mysql-power-search-db:/var/lib/mysql
+      - mysql-db:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -16,11 +16,15 @@ services:
       - '3307:3306'
   postgres:
     image: "postgres:latest"
+    container_name: postgres
     restart: "always"
     ports:
       - "5432:5432"
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
 volumes:
-  mysql-power-search-db:
+  mysql-db:
+  postgres-db:
