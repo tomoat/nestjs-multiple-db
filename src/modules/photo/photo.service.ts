@@ -6,7 +6,7 @@ import { InjectRepository, InjectConnection } from '@nestjs/typeorm';
 export class PhotoService {
   constructor(
     @InjectRepository(Photo, 'PhotoConnection')
-        private readonly photoRepository: PhotoRepository,
+    private readonly photoRepository: PhotoRepository,
   ) {}
 
   // async findAll(): Promise<Photo[]> {
@@ -16,5 +16,4 @@ export class PhotoService {
   async createPhoto(name: string): Promise<string> {
     return await this.photoRepository.createPhoto(name);
   }
-
 }

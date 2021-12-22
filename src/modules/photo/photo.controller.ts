@@ -5,10 +5,8 @@ import { PhotoService } from './photo.service';
 export class PhotoController {
   constructor(private readonly photoService: PhotoService) {}
   @Post()
-  addSetting(
-    @Body('name') name: string,
-  ): Promise<void> {
-     this.photoService.createPhoto(name);
+  addSetting(@Body('name') name: string): Promise<void> {
+    this.photoService.createPhoto(name);
     return null;
   }
 }

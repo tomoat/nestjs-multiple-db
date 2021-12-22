@@ -1,4 +1,11 @@
-import { Entity, Unique, BaseEntity, PrimaryGeneratedColumn, Column, UpdateDateColumn } from 'typeorm';
+import {
+  Entity,
+  Unique,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  Column,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity({ name: 'User', schema: 'auth' })
 @Unique(['username'])
@@ -8,7 +15,7 @@ export class User extends BaseEntity {
 
   @Column()
   username: string;
-  
+
   @Column()
   realname: string;
 
@@ -26,5 +33,4 @@ export class User extends BaseEntity {
   //   usergroup => usergroup.users,
   // )
   // usergroups: UserGroup[];
-
 }

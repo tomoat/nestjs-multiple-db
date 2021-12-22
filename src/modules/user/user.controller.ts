@@ -5,9 +5,7 @@ import { UserService } from './user.service';
 export class UserController {
   constructor(private readonly userService: UserService) {}
   @Post()
-  addSetting(
-    @Body('name') name: string,
-  ): Promise<string> {
+  addSetting(@Body('name') name: string): Promise<string> {
     return this.userService.createUser(name);
   }
 }

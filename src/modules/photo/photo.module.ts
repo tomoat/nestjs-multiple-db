@@ -5,12 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { PhotoRepository } from './photo.repository';
 
 @Module({
-  imports: [    
-    TypeOrmModule.forFeature([PhotoRepository], 'PhotoConnection'),
-  ],
-  providers: [
-    PhotoService,
-  ],
+  imports: [TypeOrmModule.forFeature([PhotoRepository], 'PhotoConnection')],
+  providers: [PhotoService],
   controllers: [PhotoController],
   exports: [TypeOrmModule],
 })

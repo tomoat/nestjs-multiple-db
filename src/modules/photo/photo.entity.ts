@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 
 @Entity({ name: 'Photo', schema: 'public' })
-export class Photo  extends BaseEntity {
+export class Photo extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
